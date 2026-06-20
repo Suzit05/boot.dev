@@ -1,0 +1,25 @@
+name: ci pipeline
+
+on:
+    - push
+    - pull_request
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository code
+              uses: actions/checkout@v3
+
+            - name: setup nodejs
+              uses: actions/setup-node@v3
+
+            - name: install dependencies
+              run : npm ci
+
+            - name: run test
+              run : npm test
+
+             
+      

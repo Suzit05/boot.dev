@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nodeapp
+spec:
+  replicas: 2
+  selector:
+  template:
+  spec:
+    - containers:
+      name: nodeapp
+      image : suzit05/nodeapp:latest
+      ports:
+        - containerPort: 3000
+
+
+
+        #kubectl apply -f Deployment.yml
+        
